@@ -1,4 +1,4 @@
-# ![ok](https://github.com/DataStax-Academy/AstraPortia/blob/master/0_materials/ico.jpg?raw=true) Workshop - Containerization and Intro to Quarkus and Cassandra with Kubernetes, Lens
+# ![ok](https://github.com/DataStax-Academy/AstraPortia/blob/master/0_materials/ico.jpg?raw=true) Workshop - Containerization and Intro to Quarkus and Cassandra with Kubernetes
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-spring-data-cassandra)
 [![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -917,113 +917,8 @@ Hereafter, there are two paths -- steps prefixed with `Lens` OR steps prefixed w
 
 |Steps prefixed with|Details| First step|
 | ----------- | ----------- |-----|
-|Lens| Install on Lens IDE|Lens.A
 |Okteto| Sample Kubernetes provider|Okteto.A
 
-If you're familiar with using `kubectl` command you can pick either. If you're not you're recommended to use Steps prefixed with `Lens`.
-
-**Step Lens.A**: Download Lens
-
-[Lens](https://k8slens.dev/) is a popular Integrated Development Environment (IDE) for Kubernetes and enables developers and engineers to develop and deploy apps on multiple clusters and adminster them easier than using command line tools like `kubectl`.
-
-[Download](https://docs.k8slens.dev/main/#downloading-lens) Lens on your local system.
-
-**Step Lens.B**: Download, install and run Lens Desktop
-
-Sign up for a free trial and download Lens desktop and install it as shown below. Make sure you select the tiny icon on the bottom left and click on the free trial as shown below.
-
-![lens](images/tutorials/LensDownload1.png?raw=true)
-
-
-If needed, launch the desktop manually as shown below.
-
-![lens](images/tutorials/LensLaunchManual1.png?raw=true)
-
-After the launch the Lens Desktop might be in a stopped state as shown in the bottom left below.
-
-![lens](images/tutorials/LensStop1.png?raw=true)
-
-Click on the `Lens Desktop Kube: Stopped` and pick appropriate values as shown below.
-
-![lens](images/tutorials/LensValues1.png?raw=true)
-
-Note that the current state is shown as stopped as shown below.
-
-![lens](images/tutorials/LensStopped1.png?raw=true)
-
-Toggle the button as shown below to move it from stopped to running.
-
-![lens](images/tutorials/LensRunning1.png?raw=true)
-
-Make sure that Lens is running as shown below. **It might take well over five minutes for the state to move to running.**
-
-![lens](images/tutorials/LensRunning2.png?raw=true)
-
-You should have Lens desktop in your clusters list as shown below.
-
-![lens](images/tutorials/LensLDK1.png?raw=true)
-
-Now that Lens Desktop is installed, up and running we're ready to deploy the ToDo app.
-
-**Step Lens.C**: Set up secrets
-
-Start by clicking on `Config`, `Secrets` and `+` as shown below.
-
-![lens](images/tutorials/Lenssecret01.png?raw=true)
-
-Now add the secret `astra` and the secrets `astra-username` and `astra-password`  as shown below.
-
-![lens](images/tutorials/Lenssecret02.png?raw=true)
-
-You can verify you entered the values correctly by hitting the button as shown below which will show the values in clear.
-
-![lens](images/tutorials/Lenssecret03.png?raw=true)
-
-**Step Lens.D**: Start the workload
-
-We use the generated `kubernetes.yml` file to install the workload in Lens.
-
-Click on `+` and `Create resource` as shown below.
-
-![lens](images/tutorials/Lensresource01.png?raw=true)
-
-We are going to cut-n-paste the contents from the Gitpod window into Lens.
-
-Issue the following command in the Gitpod terminal window to look at the Kubernetes manifests that were automatically generated and applied to the cluster.
-
-```
-gp open target/kubernetes/kubernetes.yml
-```
-
-and cut-n-paste the contents into Lens as shown below and hit `Create` as shown below.
-
-![lens](images/tutorials/Lensresource02.png?raw=true)
-
-If you dig into `Pods` you should be see it running as shown below.
-
-![lens](images/tutorials/Lensresource03.png?raw=true)
-
-You can look through other Kubernetes artifacts which you can easily navigate via Lens.
-
-**Step Lens.F**: Setup port forwarding
-
-Click on Network, Services and Forward... as shown below.
-
-![lens](images/tutorials/LensPortForward1.png?raw=true)
-
-Next forward to `8080` as shown below.
-
-![lens](images/tutorials/LensPortForward2.png?raw=true)
-
-This will setup the port forwarding to the appropriate pod. Ignore errors if any. You can now access the app via `8080` on `localhost`.
-
-**Step Lens.G**: Cleanup
-
-You can delete the service, deployment and secret using Lens.
-
-You're now done with Lens deployment and can skip other deployment(s).
-
-**OR**
 
 **Step Okteto.A**: Create a cluster
 
